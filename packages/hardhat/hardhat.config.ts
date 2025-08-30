@@ -37,7 +37,7 @@ const config: HardhatUserConfig = {
       },
     ],
   },
-  defaultNetwork: "localhost",
+  defaultNetwork: "xdcApothem",
   namedAccounts: {
     deployer: {
       // By default, it will take the first Hardhat account as the deployer
@@ -123,6 +123,10 @@ const config: HardhatUserConfig = {
     },
     celoAlfajores: {
       url: "https://alfajores-forno.celo-testnet.org",
+      accounts: [deployerPrivateKey],
+    },
+    xdcApothem: {
+      url: "https://rpc.ankr.com/xdc_testnet",
       accounts: [deployerPrivateKey],
     },
   },
