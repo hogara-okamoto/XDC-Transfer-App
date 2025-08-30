@@ -97,7 +97,7 @@ const Home: NextPage = () => {
         <div className="mt-8 flex justify-center">
           <div className="card card-compact w-96 bg-base-100 shadow-xl">
             <div className="card-body items-center text-center">
-              <h2 className="card-title text-lg">Send TXDC</h2>
+              <h2 className="card-title text-lg">Send XDC</h2>
               <div className="w-full space-y-4">
                 {/* Destination + Scan */}
                 <div className="form-control w-full">
@@ -148,7 +148,7 @@ const Home: NextPage = () => {
                 {/* Amount */}
                 <div className="form-control w-full">
                   <label className="label">
-                    <span className="label-text">Amount (TXDC)</span>
+                    <span className="label-text">Amount (XDC)</span>
                   </label>
                   <EtherInput value={amount} onChange={setAmount} placeholder="Enter amount" />
                 </div>
