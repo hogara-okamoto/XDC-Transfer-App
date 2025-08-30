@@ -1,7 +1,7 @@
-# XDC Transfer App (Cross-border Payments) #
+# XDC Transfer App for Daily Life Money Transaction #
 
 ## Problem ## 
-Sending money abroad (like migrant workers sending to families) is slow and costly with banks/Western Union.
+It is common to pay and receive money using electronic money, but if you don't have a credit card, it can be a hassle to charge the payment amount every time.
 
 ## Solution ##
-A mobile/web app on XDC that lets users send XDC with near-zero fees and instant settlement.
+A mobile/web app on XDC that lets users receive and send XDC easily by using the QR code.
