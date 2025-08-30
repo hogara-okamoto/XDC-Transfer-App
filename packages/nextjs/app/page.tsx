@@ -187,7 +187,7 @@ const Home: NextPage = () => {
                       Sending...
                     </>
                   ) : (
-                    "Send TXDC"
+                    "Send XDC"
                   )}
                 </button>
               </div>
