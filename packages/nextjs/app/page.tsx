@@ -41,6 +41,16 @@ const Home: NextPage = () => {
   // simple EVM address check to avoid wallet JSON-RPC -32603 errors
   const isValidHexAddress = (addr: string) => /^0x[0-9a-fA-F]{40}$/.test(addr);
 
+  // Extract the first valid EVM/XDC address from arbitrary QR content (e.g., "ethereum:0xabc...@0x33", "xdcabc...", raw address)
+  const extractAddressFromQr = (text: string): string | null => {
+    const match = text.match(/(0x|xdc)[0-9a-fA-F]{40}/i);
+    if (!match) return null;
+    const raw = match[0];
+    // Normalize XDC prefix to 0x since wallet RPC expects 0x addresses
+    const normalized = raw.toLowerCase().startsWith("xdc") ? "0x" + raw.slice(3) : raw;
+    return normalized as string;
+  };
+
   return (
     <div className="flex items-center flex-col grow pt-10">
       <div className="px-5">
@@ -133,8 +143,12 @@ const Home: NextPage = () => {
 
                       <Scanner
                         onDecoded={text => {
-                          const val = text.trim();
-                          setDestinationAddress(val);
+                          const parsed = extractAddressFromQr(text.trim());
+                          if (!parsed) {
+                            setScanError("QR does not contain a valid address.");
+                            return;
+                          }
+                          setDestinationAddress(parsed);
                           setScannerOpen(false);
                           setScanError("");
                         }}

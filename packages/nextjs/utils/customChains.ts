@@ -18,3 +18,22 @@ export const xdcApothem = defineChain({
   },
   testnet: true,
 });
+
+// XDC Mainnet
+export const xdcMainnet = defineChain({
+  id: 50,
+  name: "XDC Network",
+  nativeCurrency: { name: "XDC", symbol: "XDC", decimals: 18 },
+  rpcUrls: {
+    default: {
+      http: ["https://erpc.xinfin.network"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "XDC Explorer",
+      url: "https://explorer.xinfin.network",
+    },
+  },
+  testnet: false,
+});
