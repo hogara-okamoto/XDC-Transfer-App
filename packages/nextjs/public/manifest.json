@@ -1,5 +1,5 @@
 {
-  "name": "Scaffold-ETH 2 DApp",
-  "description": "A DApp built with Scaffold-ETH",
+  "name": "XDC Transfer App",
+  "description": "Send and receive XDC with QR codes",
   "iconPath": "logo.svg"
 }
